@@ -100,19 +100,6 @@ def main() -> None:
             st.session_state.audio_bytes, 
             "code_audio"
         ), unsafe_allow_html=True)
-
-
-#This displays the instructions on how to use the code-to-speech
-        st.markdown("""
-            ### How to Use:
-            1. Paste your code in the text area
-            2. Adjust voice settings in the sidebar
-            3. Click "Read Code Aloud" to hear your code
-            4. Additionally, you can download the audio file
-            ### Note:
-            - Maximum ~1000 characters per request
-            - Internet connection is required
-            """)   
         
 #The entry point to the code 
 if __name__ == "__main__":
