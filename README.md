@@ -8,11 +8,9 @@ Our Code-to-Speech is an accessibility-focused tool that aims to support visuall
 
 # Features
 
-Multiple Language Support: This tool currently supports Python and other Python-like languages. Additionally, it can read the code aloud in English, Spanish, French, or German.
+Multiple Language Support: This tool supports Python and other programming languages. Additionally, it can read the code aloud in English, Spanish, French, or German.
 
 Speed Control: The reading pace can be adjusted
-
-Downloadable File: This tool also allows you to download the audio file to listen offline. And maybe share with a friend, colleague, or collaborator
 
 # Installation
 
@@ -28,4 +26,5 @@ We welcome contributions from developers, particularly those who are focused on 
 # Run Code
 
 streamlit run main.py
-[Try it out here!] (https://ncair-code-speech-developer-assistant.streamlit.app/)
+
+- [Try it out here!] (https://ncair-code-speech-developer-assistant.streamlit.app/)
