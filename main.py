@@ -56,27 +56,43 @@ def main():
     The main function to run the Streamlit application.
     """
     st.title("Code-to-Speech Developer Assistant 🗣️")
-    st.markdown("Enter your code snippet below and I'll read it aloud for you!")
+    st.markdown(
+        "Enter your code snippet below or upload a file and I'll read it aloud for you!")
 
     st.sidebar.header("Speech Settings")
     language = st.sidebar.selectbox(
         "Select Language", ['en', 'es', 'fr', 'de'], index=0)
     slow_speech = st.sidebar.checkbox("Slow Speech", False)
 
-    code_snippet = st.text_area("Paste your code here:", height=250)
+    input_method = st.radio("Choose Input Method",
+                            ("Paste Code", "Upload File"))
+
+    code_snippet = ""
+
+    if input_method == "Paste Code":
+        code_snippet = st.text_area("Paste your code here:", height=250)
+        st.success("Paste your code here!")
+    elif input_method == "Upload File":
+        uploaded_file = st.file_uploader("Upload a code file (.py, .js, .txt, etc.)", type=[
+                                         "py", "js", "txt", "html", "css", "md"])
+        st.success("Upload a file")
+        if uploaded_file is not None:
+            code_snippet = uploaded_file.read().decode("utf-8")
+            st.code(code_snippet, language=uploaded_file.name.split(
+                '.')[-1])
+        else:
+            st.error("Please upload a file!")
 
     if st.button("Read Code Aloud"):
         if code_snippet:
             with st.spinner("Generating audio..."):
                 try:
-                    # Create an instance of the converter class
                     converter = CodeToSpeechConverter(
                         text=code_snippet,
                         lang=language,
                         slow=slow_speech
                     )
 
-                    # Call the method to get the audio data
                     audio_stream = converter.generate_audio()
 
                     st.audio(audio_stream, format='audio/mp3')
@@ -86,7 +102,7 @@ def main():
                 except Exception as e:
                     st.error(f"An error occurred: {e}")
         else:
-            st.warning("Please enter some code to convert.")
+            st.warning("Please enter some code or upload a file to convert.")
 
 
 if __name__ == "__main__":
