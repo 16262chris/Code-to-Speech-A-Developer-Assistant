@@ -6,11 +6,13 @@ Have you ever wondered how a visually impaired developer would debug his or her 
 
 Our Code-to-Speech is an accessibility-focused tool that aims to support visually impaired developers by reading source code aloud in a clear manner. By turning code into speech, this tool promotes inclusivity in software development and ensures that programming remains accessible to all. As common with tools like this, non-visually impaired developers can also use it to review or debug their code while multitasking. For example, a developer could listen to his or her code and try to figure out where a particular error is emanating from whilst eating or even bathing.
 
-# Features
+## Features
 
-Multiple Language Support: This tool supports Python and other programming languages. Additionally, it can read the code aloud in English, Spanish, French, or German.
+- **Multiple Language Support:** This tool supports Python and other programming languages. Additionally, it can read the code aloud in English, Spanish, French, or German.  
 
-Speed Control: The reading pace can be adjusted
+- **Speed Control:** The reading pace can be adjusted for normal or slow playback.  
+
+- **Flexible Input Options:** Users can either **paste code directly** into the editor or **upload a file** containing the code snippet for conversion.  
 
 # Installation
 
