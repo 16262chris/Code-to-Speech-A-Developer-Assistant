@@ -15,7 +15,7 @@ Speed Control: The reading pace can be adjusted
 # Installation
 
 We used the following for the project:
-- Python 3.9
+- Python 3.13.5
 - Streamlit
 - Google text-to-speech API (gTTS)
 
